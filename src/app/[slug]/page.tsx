@@ -22,8 +22,8 @@ const sampleArticles: Record<ArticleKey, {
   }
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const article = sampleArticles[params.slug as ArticleKey];
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const article = sampleArticles[(await params).slug as ArticleKey];
   if (!article) {
     return {
       title: "Article Not Found | MovieBlog",
