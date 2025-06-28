@@ -24,7 +24,7 @@ const sampleArticles: Record<ArticleKey, {
   }
 };
 
-export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const article = sampleArticles[params.slug as ArticleKey];
   if (!article) {
     return {
