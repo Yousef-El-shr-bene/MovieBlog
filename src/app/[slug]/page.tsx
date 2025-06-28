@@ -48,8 +48,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = sampleArticles[params.slug as ArticleKey];
+export default async function ArticlePage({ params }: Promise<{ slug: string }>) {
+  const article = sampleArticles[await params.slug as ArticleKey];
 
   if (!article) {
     return <div className="text-red-500">Article not found.</div>;
