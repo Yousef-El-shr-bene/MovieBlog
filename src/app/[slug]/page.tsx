@@ -1,9 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 
-interface ArticlePageProps {
-  params: { slug: string };
-}
+
 
 type ArticleKey = "dune-part-two-box-office" | "making-of-furiosa";
 
@@ -50,7 +48,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
+export default async function ArticlePage({ params }: { params: { slug: string } }) {
   const article = sampleArticles[params.slug as ArticleKey];
 
   if (!article) {
