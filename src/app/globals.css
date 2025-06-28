@@ -1,0 +1,6 @@
+/* stylelint-disable at-rule-no-unknown */
+@import "tailwindcss";
+
+body {
+  @apply font-sans;
+}
