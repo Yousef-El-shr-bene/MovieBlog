@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface ArticleCardProps {
   article: {
     title: string;
@@ -9,7 +11,7 @@ interface ArticleCardProps {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <a
+    <Link
       href={`/${article.slug}`}
       className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
     >
@@ -22,6 +24,6 @@ export function ArticleCard({ article }: ArticleCardProps) {
         <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
         <p className="text-sm text-gray-600">{article.excerpt}</p>
       </div>
-    </a>
+    </Link>
   );
 }
