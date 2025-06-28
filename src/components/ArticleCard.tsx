@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface ArticleCardProps {
   article: {
@@ -15,7 +16,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
       href={`/${article.slug}`}
       className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
     >
-      <img
+      <Image
         src={article.imageUrl}
         alt={article.title}
         className="w-full h-48 object-cover"

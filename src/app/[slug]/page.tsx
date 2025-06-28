@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
+import Image from "next/image";
 
 interface ArticlePageProps {
   params: { slug: string };
@@ -60,7 +60,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
   return (
     <article className="bg-white p-6 rounded-xl shadow">
       <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
-      <img
+      <Image
         src={article.imageUrl}
         alt={article.title}
         className="w-full h-64 object-cover rounded-lg mb-6"
